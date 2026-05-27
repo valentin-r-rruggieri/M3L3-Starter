@@ -1,0 +1,236 @@
+/* === RESET === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+form {
+  margin: 0;
+  padding: 0;
+}
+
+/* === BASE === */
+body {
+  font-family: system-ui, sans-serif;
+  background: #f0f4ff;
+  color: #1e293b;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+/* === CONTAINER === */
+.container {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  width: 100%;
+  max-width: 28rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* === HEADER === */
+.app-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.app-subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* === FORM === */
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.6rem 0.9rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #6366f1;
+}
+
+.btn {
+  padding: 0.6rem 1.1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn--primary {
+  background: #6366f1;
+  color: white;
+}
+
+.btn--primary:hover {
+  background: #4f46e5;
+}
+
+.btn--primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn--secondary {
+  background: white;
+  color: #6366f1;
+  border: 2px solid #6366f1;
+}
+
+.btn--secondary:hover {
+  background: #f0f4ff;
+}
+
+/* === STATE BADGE (debug visual) === */
+.state-badge {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+/* === STATE PANELS === */
+.state-panel {
+  min-height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+
+.state-panel--idle {
+  background: #f8fafc;
+  color: #94a3b8;
+}
+
+.state-panel--loading {
+  background: #f0f4ff;
+}
+
+.spinner {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 3px solid #e2e8f0;
+  border-top-color: #6366f1;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.state-panel--error {
+  background: #fff1f2;
+  color: #be123c;
+}
+
+.error-icon {
+  font-size: 2rem;
+}
+
+.error-message {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* === POKEMON CARD === */
+.state-panel--success {
+  background: transparent;
+  padding: 0;
+}
+
+.pokemon-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.pokemon-card img {
+  width: 8rem;
+  height: 8rem;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.pokemon-card__name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  margin: 0.5rem 0;
+}
+
+.pokemon-card__id {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.pokemon-card__stats {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.pokemon-card__stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon-card__stat span:first-child {
+  font-size: 0.7rem;
+  opacity: 0.75;
+  text-transform: uppercase;
+}
+
+.pokemon-card__stat strong {
+  font-size: 1.1rem;
+}
+
+/* === UTILITY === */
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 24rem) {
+  .search-form {
+    flex-direction: column;
+  }
+}
