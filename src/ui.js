@@ -47,21 +47,34 @@ const $btn = document.querySelector("#search-btn");
 // Construye el HTML de la tarjeta con estos campos del objeto Pokémon:
 //   - pokemon.name
 //   - pokemon.id  (formateado como #001, #025, etc)
-//   - pokemon.sprites.front_default  (URL de la imagen)
+//   - pokemon.sprites.other["official-artwork"].front_default  (imagen grande)
+//   - pokemon.sprites.front_default  (fallback si no hay artwork)
+//   - pokemon.types  (badges de tipo)
 //   - pokemon.height / 10  (viene en decímetros -> convertir a metros)
 //   - pokemon.weight / 10  (viene en hectogramos -> convertir a kg)
+//   - pokemon.base_experience
 //
 // Estructura HTML a usar (con las clases del CSS):
 //
-//   <img src="..." alt="Sprite de pikachu" />
-//   <p class="pokemon-card__id">#025</p>
-//   <h2 class="pokemon-card__name">pikachu</h2>
+//   <div class="pokemon-card__media">
+//     <img src="..." alt="Imagen de pikachu" />
+//   </div>
+//   <div class="pokemon-card__header">
+//     <h2 class="pokemon-card__name">pikachu</h2>
+//     <p class="pokemon-card__id">#025</p>
+//   </div>
+//   <div class="pokemon-card__types">
+//     <span class="pokemon-card__type">electric</span>
+//   </div>
 //   <div class="pokemon-card__stats">
 //     <div class="pokemon-card__stat">
 //       <span>Altura</span><strong>0.4 m</strong>
 //     </div>
 //     <div class="pokemon-card__stat">
 //       <span>Peso</span><strong>6.0 kg</strong>
+//     </div>
+//     <div class="pokemon-card__stat">
+//       <span>EXP</span><strong>112</strong>
 //     </div>
 //   </div>
 //

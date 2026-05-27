@@ -129,9 +129,12 @@ Implementar `buildPokemonCard(pokemon)` usando:
 
 - `pokemon.name`
 - `pokemon.id`
-- `pokemon.sprites.front_default`
+- `pokemon.sprites.other["official-artwork"].front_default`
+- `pokemon.sprites.front_default` como fallback
+- `pokemon.types`
 - `pokemon.height / 10`
 - `pokemon.weight / 10`
+- `pokemon.base_experience`
 
 ### Paso 4 — `src/main.js`
 
